@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import Profile from './profile/profile';
+import swal from 'sweetalert';
 
 function App() {
+ function handleName (){
+  swal("Thank you for following me !");
+  } 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="container">
+      <div className="main-body">
+        <Profile
+          fullName="Leith Gharbi"
+          profession="Full Stack Developer"
+          bio="I'm learning React.js"
+          onClick={handleName}
         >
-          Learn React
-        </a>
-      </header>
+          <img
+            src="/avatar7.png"
+            alt="Admin"
+            className="rounded-circle"
+            width="150"
+          />
+        </Profile>
+      </div>
     </div>
   );
 }
